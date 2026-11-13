@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ardú Bua Sports | Polished Website Prototype with Tennis & Padel</title>
-<meta name="description" content="Polished clickable website prototype for Ardú Bua Sports.">
+<title>Ardú Bua Sports | Sports Management, Tennis & Padel in Ireland</title>
+<meta name="description" content="Ardú Bua Sports supports clubs, public authorities and private organisations with sports management, tennis and padel development, facilities, events and partnerships across Ireland.">
 <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIj4KPHJlY3Qgd2lkdGg9IjEyMCIgaGVpZ2h0PSIxMjAiIHJ4PSIyNCIgZmlsbD0iIzA4MUYzQiIvPgo8cGF0aCBkPSJNMjAgODggTDUwIDIwIEw2MSAyMCBMOTIgODggTDc2IDg4IEw2OCA3MCBMNDIgNzAgTDM0IDg4IFogTTQ4IDU2IEw2MiA1NiBMNTUgMzggWiIgZmlsbD0iI2ZmZiIvPgo8cGF0aCBkPSJNNDQgODMgQzYxIDYxIDgxIDQ1IDEwNCAzNSIgc3Ryb2tlPSIjMjRDMzRBIiBzdHJva2Utd2lkdGg9IjkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNOTggMzEgTDExMSAzNSBMMTAxIDQ1IFoiIGZpbGw9IiMyNEMzNEEiLz4KPC9zdmc+">
 <style>
 :root {
@@ -530,18 +530,17 @@ textarea{min-height:150px;resize:vertical}
       </div>
       <p class="lead">Tell us what you are developing and we can explore how Ardú Bua Sports can support your organisation.</p>
       <div class="panel">
-        <p><strong>Email:</strong> info@ardubuasports.ie</p>
+        <p><strong>Email:</strong> <a href="mailto:ardubua@gmail.com">ardubua@gmail.com</a></p>
         <p><strong>Location:</strong> Ireland</p>
-        <p><strong>Website:</strong> www.ardubuasports.ie</p>
-        <p><strong>LinkedIn:</strong> Ardú Bua Sports</p>
+        <p><strong>Website:</strong> www.ardubuasports.com</p>
       </div>
     </div>
     <div class="panel">
       <form id="contactForm" class="form">
-        <input type="text" placeholder="Name / Organisation" required>
-        <input type="email" placeholder="Email address" required>
-        <select>
-          <option>What do you need support with?</option>
+        <input type="text" name="senderName" placeholder="Name / Organisation" required>
+        <input type="email" name="senderEmail" placeholder="Email address" required>
+        <select name="enquiryType">
+          <option value="">What do you need support with?</option>
           <option>Sports management / consultancy</option>
           <option>Facility or club development</option>
           <option>Programme design</option>
@@ -549,9 +548,9 @@ textarea{min-height:150px;resize:vertical}
           <option>Partnerships or sponsorship</option>
           <option>Other</option>
         </select>
-        <textarea placeholder="Tell us briefly about your project"></textarea>
+        <textarea name="enquiryMessage" placeholder="Tell us briefly about your project" required></textarea>
         <button type="submit" class="btn green">Send Enquiry</button>
-        <div id="formNotice" class="notice">Thanks — this prototype form is working. In WordPress, this message would be sent to your chosen email address.</div>
+        <div id="formNotice" class="notice" role="status">Your email application should open with a prepared enquiry to ardubua@gmail.com. Please review the message and press Send in your email application.</div>
       </form>
     </div>
   </div>
@@ -576,9 +575,9 @@ textarea{min-height:150px;resize:vertical}
     </div>
     <div>
       <h3>Contact Us</h3>
-      <p>info@ardubuasports.ie</p>
+      <p><a href="mailto:ardubua@gmail.com">ardubua@gmail.com</a></p>
       <p>Ireland</p>
-      <p>LinkedIn: Ardú Bua Sports</p>
+      <p>www.ardubuasports.com</p>
     </div>
   </div>
   <div class="container footer-bottom">
@@ -619,8 +618,22 @@ if(toggle && menu) toggle.addEventListener('click', () => menu.classList.toggle(
 document.addEventListener('submit', e => {
   if(e.target && e.target.id === 'contactForm'){
     e.preventDefault();
+    const form = e.target;
+    const senderName = form.elements.namedItem('senderName').value.trim();
+    const senderEmail = form.elements.namedItem('senderEmail').value.trim();
+    const enquiryType = form.elements.namedItem('enquiryType').value.trim();
+    const enquiryMessage = form.elements.namedItem('enquiryMessage').value.trim();
+    const subject = enquiryType ? 'Ardú Bua Sports enquiry: ' + enquiryType : 'Ardú Bua Sports website enquiry';
+    const body = [
+      'Name / Organisation: ' + senderName,
+      'Email: ' + senderEmail,
+      'Enquiry type: ' + (enquiryType || 'General enquiry'),
+      '',
+      enquiryMessage
+    ].join('\n');
     const notice = document.getElementById('formNotice');
-    if(notice){ notice.style.display = 'block'; notice.scrollIntoView({behavior:'smooth', block:'center'}); }
+    if(notice){notice.style.display = 'block';notice.scrollIntoView({behavior:'smooth',block:'center'});}
+    window.location.href = 'mailto:ardubua@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   }
 });
 // Retry failed external images using the Padel Federation club photograph.
