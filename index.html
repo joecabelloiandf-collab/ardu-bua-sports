@@ -253,7 +253,20 @@ textarea{min-height:150px;resize:vertical}
 <style id="ardu-bua-real-courts-photos">
 /* Original Bushy Park aerial photography: real tennis courts and padel courts. */
 .hero-courts-visual {position:absolute;right:0;top:0;z-index:1;width:58%;height:100%;object-fit:contain;object-position:right center;background:#e8f0ed;mask-image:linear-gradient(to right,transparent 0%,#000 18%);-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 18%);}
-.hero .container.hero-content {position:relative;z-index:2;}
+.hero .container.hero-content {
+  position:relative;z-index:3;
+  width:min(600px,92vw);max-width:600px;
+  margin:44px auto 44px max(4vw, calc((100vw - 1190px)/2));
+  padding:38px 42px 40px;
+  border-radius:20px;
+  background:rgba(255,255,255,.94);
+  border:1px solid rgba(255,255,255,.8);
+  box-shadow:0 16px 40px rgba(8,31,59,.15);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+}
+.hero .hero-content .lead {color:#1a3048;font-size:18px;line-height:1.65;font-weight:600;max-width:510px;}
+.hero .hero-content h1 {line-height:1.04;}
+.hero .hero-content .kicker {color:#117c2b;}
 .premium-sport-photo-section {scroll-margin-top:115px;}
 .hero {
   background: linear-gradient(90deg,rgba(255,255,255,.99) 0%,rgba(255,255,255,.98) 35%,rgba(255,255,255,.88) 46%,rgba(255,255,255,.26) 74%,rgba(255,255,255,.06) 100%),
@@ -261,7 +274,7 @@ textarea{min-height:150px;resize:vertical}
   min-height:620px;
 }
 .hero::after { display:none !important; }
-.hero .hero-content {max-width:575px;}
+.hero .hero-content {max-width:600px;}
 .premium-sport-photo-card {background:#103454;}
 .premium-sport-photo-card img {display:block;width:100%;height:100%;object-fit:cover;object-position:center;}
 .premium-sport-photo-card:nth-child(1) img {object-position:50% 42%;}
@@ -278,6 +291,13 @@ textarea{min-height:150px;resize:vertical}
   .hero {background:linear-gradient(90deg,rgba(255,255,255,.97),rgba(255,255,255,.87) 68%,rgba(255,255,255,.42)),url("https://padelfederation.ie/wp-content/uploads/2026/07/DJI_0265-scaled-1.jpg.webp") center center / cover no-repeat !important;}
   .hero-courts-visual {width:100%;opacity:.34;mask-image:none;-webkit-mask-image:none;object-position:center;}
   .premium-sport-photo-section {scroll-margin-top:90px;}
+  .hero .container.hero-content {
+    width:92vw;max-width:none;margin:24px auto 36px;
+    padding:26px 22px 30px;
+    background:rgba(255,255,255,.95);
+    border-radius:16px;
+  }
+  .hero .hero-content .lead {font-size:16px;line-height:1.6;}
 }
 </style>
 </head>
@@ -360,12 +380,12 @@ textarea{min-height:150px;resize:vertical}
       <a href="#services" data-page="services" class="btn green">View All Services →</a>
     </div>
     <div class="tiles">
-      <a class="tile" href="#services" data-page="services"><img src="https://padelfederation.ie/wp-content/uploads/2026/07/DJI_0265-scaled-1.jpg.webp" data-fallback-src="https://padelfederation.ie/wp-content/uploads/2026/07/DJI_0265-scaled-1.jpg.webp" referrerpolicy="no-referrer" loading="lazy" decoding="async" alt="Strategy & Consultancy: tennis and padel club facilities and activities"><span>Strategy & Consultancy</span></a>
-      <a class="tile" href="#services" data-page="services"><img src="https://padelcourts.ie/objects/uploads/e901a987-93b1-40f7-b78e-9436f424872b" data-fallback-src="https://padelfederation.ie/wp-content/uploads/2026/07/DJI_0265-scaled-1.jpg.webp" referrerpolicy="no-referrer" loading="lazy" decoding="async" alt="Facility & Club Development: tennis and padel club facilities and activities"><span>Facility & Club Development</span></a>
-      <a class="tile" href="#services" data-page="services"><img src="https://www.padelireland.org/images/courts/bushy.jpeg" data-fallback-src="https://padelfederation.ie/wp-content/uploads/2026/07/DJI_0265-scaled-1.jpg.webp" referrerpolicy="no-referrer" loading="lazy" decoding="async" alt="Programme Design & Delivery: tennis and padel club facilities and activities"><span>Programme Design & Delivery</span></a>
-      <a class="tile" href="#services" data-page="services"><img src="https://ipadel.co.uk/uploads/Images/Large/B-iPadel2788Club1.jpg" data-fallback-src="https://padelfederation.ie/wp-content/uploads/2026/07/DJI_0265-scaled-1.jpg.webp" referrerpolicy="no-referrer" loading="lazy" decoding="async" alt="Event & Tournament Management: tennis and padel club facilities and activities"><span>Event & Tournament Management</span></a>
-      <a class="tile" href="#services" data-page="services"><img src="https://padelmaps.org/uploads/club_photos/club_2427_323ebbf67f3d3c49.jpg" data-fallback-src="https://padelfederation.ie/wp-content/uploads/2026/07/DJI_0265-scaled-1.jpg.webp" referrerpolicy="no-referrer" loading="lazy" decoding="async" alt="Partnerships & Sponsorship: tennis and padel club facilities and activities"><span>Partnerships & Sponsorship</span></a>
-      <a class="tile" href="#services" data-page="services"><img src="https://padelfederation.ie/wp-content/uploads/2026/07/DJI_0265-scaled-1.jpg.webp" data-fallback-src="https://padelfederation.ie/wp-content/uploads/2026/07/DJI_0265-scaled-1.jpg.webp" referrerpolicy="no-referrer" loading="lazy" decoding="async" alt="Governance & Operational Support: tennis and padel club facilities and activities"><span>Governance & Operational Support</span></a>
+      <a class="tile" href="#services" data-page="services"><img src="https://tennisclubconnect.com/images/tennis_hero6.jpg" data-fallback-src="https://padelfederation.ie/wp-content/uploads/2026/07/DJI_0265-scaled-1.jpg.webp" referrerpolicy="no-referrer" loading="lazy" decoding="async" alt="Aerial overview of real tennis club courts in Ireland"><span>Strategy & Consultancy</span></a>
+      <a class="tile" href="#services" data-page="services"><img src="https://padelcourts.ie/objects/uploads/e901a987-93b1-40f7-b78e-9436f424872b" data-fallback-src="https://www.padelireland.org/images/courts/bushy.jpeg" referrerpolicy="no-referrer" loading="lazy" decoding="async" alt="Padel club facilities for venue and court development"><span>Facility & Club Development</span></a>
+      <a class="tile" href="#services" data-page="services"><img src="https://www.sportirelandcampus.ie/sites/default/files/styles/widescreen_television/public/2025-06/4-dsc_0411.jpg?h=4b11ef37&itok=5bbSXxUn" data-fallback-src="https://www.padelireland.org/images/courts/bushy.jpeg" referrerpolicy="no-referrer" loading="lazy" decoding="async" alt="Young players participating in tennis activities at Sport Ireland Campus"><span>Programme Design & Delivery</span></a>
+      <a class="tile" href="#services" data-page="services"><img src="https://ipadel.co.uk/uploads/Images/Large/B-iPadel2788Club1.jpg" data-fallback-src="https://www.padelireland.org/images/courts/bushy.jpeg" referrerpolicy="no-referrer" loading="lazy" decoding="async" alt="Padel players competing on an outdoor court"><span>Event & Tournament Management</span></a>
+      <a class="tile" href="#services" data-page="services"><img src="https://padelmaps.org/uploads/club_photos/club_2427_323ebbf67f3d3c49.jpg" data-fallback-src="https://tennisclubconnect.com/images/tennis_hero6.jpg" referrerpolicy="no-referrer" loading="lazy" decoding="async" alt="Tennis and padel sport facilities showcasing club partnerships"><span>Partnerships & Sponsorship</span></a>
+      <a class="tile" href="#services" data-page="services"><img src="https://padelfederation.ie/wp-content/uploads/2026/07/DJI_0265-scaled-1.jpg.webp" data-fallback-src="https://www.padelireland.org/images/courts/bushy.jpeg" referrerpolicy="no-referrer" loading="lazy" decoding="async" alt="Aerial view of tennis and padel club facilities in Dublin"><span>Governance & Operational Support</span></a>
     </div>
   </div>
 </section>
